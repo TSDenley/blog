@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+		<nav class="navbar navbar-default navbar-static-top" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+
+						<div class="navbar-header">
+						<%= link_to "Test Blog", { controller: "welcome" },  class: "navbar-brand" %>
+						</div>
+
+						<ul class="nav navbar-nav">
+							<li><%= link_to "Blog", controller: "posts" %></li>
+						</ul>
+
+					</div> <!-- col8 -->
+				</div> <!-- row -->
+			</div> <!-- container -->
+		</nav> <!-- navbar-top -->
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+
+				<%= yield %>
+
+			</div> <!-- col8 -->
+		</div> <!-- row -->
+	</div> <!-- container -->
+
+</body>
+</html>
