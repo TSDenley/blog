@@ -6,7 +6,7 @@
 	<%= link_to(posts_path, class: "btn btn-default btn-sm") do %>
 			<span class="glyphicon glyphicon-circle-arrow-left"></span> Back to All Posts
 	<% end %>
-	<%= link_to(edit_post_path(@post), class: "btn btn-default btn-sm") do %>
+	<%= link_to(edit_post_path(@post), title: "Edit", class: "btn btn-default btn-sm") do %>
 		<span class="glyphicon glyphicon-cog"></span>
 	<% end %>
 </p>
@@ -16,3 +16,14 @@
 <p>
 	<%= @post.text %>
 </p>
+
+<hr>
+
+<h2>Comments</h2>
+
+<ul class="comments list-group">
+	<%= render @post.comments %>
+</ul>
+
+<h3>Add a Comment</h3>
+<%= render "comments/form" %>
